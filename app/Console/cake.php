@@ -17,12 +17,13 @@
  * @since         CakePHP(tm) v 2.0
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
+date_default_timezone_set('Asia/Tokyo');
 $ds = DIRECTORY_SEPARATOR;
 $dispatcher = 'Cake' . $ds . 'Console' . $ds . 'ShellDispatcher.php';
 
 if (function_exists('ini_set')) {
 	$root = dirname(dirname(dirname(__FILE__)));
-	ini_set('include_path', $root . $ds . 'lib' . PATH_SEPARATOR . ini_get('include_path'));
+	ini_set('include_path', $root . $ds . 'cakephp/lib' . PATH_SEPARATOR . ini_get('include_path'));
 }
 
 if (!include ($dispatcher)) {
